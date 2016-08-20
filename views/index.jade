@@ -9,9 +9,8 @@ block content
           | Home 
           span.sr-only (current)
       li.nav-item
-        a.nav-link(href='#') About
-      li.nav-item
-        a.nav-link(href='#') Contact
+        form.form-inline
+          input.form-control(type='text', placeholder='Search')
   div(id='app' ng-app='m8viesApp')
     ng-view
       
