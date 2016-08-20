@@ -1,0 +1,8 @@
+script(src='/cards/controllers/movie-ctrl.js')
+div(ng-controller='MoviesCtrl')
+  .container  
+    .card-columns
+      span(ng-repeat='movie in movies')
+        include ./cards/card.jade
+        
+      

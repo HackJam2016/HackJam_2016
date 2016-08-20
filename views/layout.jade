@@ -2,10 +2,13 @@ doctype html
 html
   head
     title= title
-    link(rel='stylesheet', href='/stylesheets/style.css')
+    // Latest compiled and minified CSS 
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.3/css/bootstrap.min.css', integrity='sha384-MIwDKRSSImVFAZCVLtU0LMDdON6KVCrZHyVQQj6e8wIEJkW4tvwqXrbMIya1vriY', crossorigin='anonymous')
     script(src='https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js')
     script(src='https://code.angularjs.org/1.5.8/angular-route.min.js')
+    script(src='https://code.angularjs.org/1.5.8/angular-resource.min.js')
     script(src='/javascripts/app.js')
     script(src='/javascripts/controllers/movie-ctrl.js')
-  body(ng-app='m8viesApp')
+    script(src='/javascripts/services/movie.js')
+  body
     block content 
