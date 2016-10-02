@@ -1,24 +1,22 @@
-angular.module('toxicApp', ['ngRoute', 'ngResource', 'ui.router', 'ui.bootstrap'])
-  .config(function($stateProvider, $urlRouterProvider, $locationProvider){
+angular.module('toxicApp', ['ngRoute', 'ngResource', 'ui.bootstrap'])
+  .config(function($routeProvider, $urlRouterProvider, $locationProvider){
   	console.log("config");
-  	$stateProvider
-  		.state('/login', {
-  			url: '/login',
-  			templateUrl: '/login',
-  			controller: 'loginCtrl',
-  			controllerAs: 'vm'
+  	$routeProvider
+  		.when('/login', {
+  			templateUrl: '/login'
   		})
-  		.state('/home', {
-  			url: '/home',
-  			templateUrl: '/home',
-  			controller: 'HomeCtrl',
-  			controllerAs: 'vm',
-  			access: { requiredLogin: true }
-
+  		.when('/home', {
+  			templateUrl: '/home'
+  		})
+  		.when('/groupList', {
+  			templateUrl: '/groupList'
+  		})
+  		.when('/groupChat', {
+  			templateUrl: '/groupChat'
   		});
 	$locationProvider.html5Mode(true);
 
-	$urlRouterProvider.otherwise('/home');
+	$urlRouterProvider.otherwise('/login');
 
 	// $rootScope.$on('$stateChangeStart', function(event, toState, fromState, fromParams) {
 	// 	if (toState.access.requiredLogin) {
