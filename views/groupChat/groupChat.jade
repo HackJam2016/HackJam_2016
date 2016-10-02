@@ -24,20 +24,22 @@ block content
 								.row
 									.col-xs-12(style="max-height:300px;max-width:100%;overflow-y:auto;overflow-x:hidden;")
 										table.table.table-hover.table-condensed
-											tr(ng-hide="vm.chatMessages.length === 0", ng-repeat="chat in vm.chatMessages | orderBy:origDt:true", style="min-width:100%;max-width:100%;width:100%;")
-												td:img(src="{{chat.icon}}" alt="" style="margin-top:8px;")
-												td:h6 {{chat.username}}
-												td:p(style="word-wrap: break-word")
-													small {{chat.text}}
-											tr(ng-show="vm.chatMessages.length === 0")
-												td:p Nothin' here.
-													strong Say sth!
+											tr(ng-if="vm.chatMessages.length!==0", ng-repeat="chat in vm.chatMessages | orderBy: origDt", style="min-width:100%;max-width:100%;width:100%;")
+												td
+													div.chat-username
+														i.zmdi.zmdi-account-circle
+														span {{chat.username}} : 
+													span.chat-message(style="word-wrap: break-word")
+														small {{chat.text}}
+											tr(ng-if="vm.chatMessages.length===0")
+												td
+													p Nothin' here.
+														strong Say sth!
 							.panel-footer
 								form
 									.input-group.input-group-sm
-										span.input-group-addon
-											img(src="http://placehold.it/16x16" alt="")
-										input(type="text" class="form-control" ng-model="vm.newChatMsg" placeholder="...")
+										i.zmdi.zmdi-comment-more.input-icon.pull-left
+										input.message-input(type="text" class="form-control" ng-model="vm.newChatMsg" placeholder="Please enter your message here...")
 										span.input-group-btn
 											button.btn.btn-primary(type="submit" ng-click="vm.addChat()") Send
 
