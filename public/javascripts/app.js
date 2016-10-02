@@ -1,6 +1,5 @@
 angular.module('toxicApp', ['ngRoute', 'ngResource', 'ui.bootstrap'])
   .config(function($routeProvider, $locationProvider){
-  	console.log("config");
   	$routeProvider
   		.when('/login', {
   			templateUrl: '/login'
