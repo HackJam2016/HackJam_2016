@@ -1,6 +1,7 @@
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  margin-bottom:50px;
 }
 
 a {
@@ -50,4 +51,15 @@ a {
 }
 .message-input {
 	width: 95% !important;
+}
+
+#footer{
+    position:fixed;
+    height:60px;
+    background-color:coral;
+    color: white;
+    bottom:0px;
+    left:0px;
+    right:0px;
+    margin-bottom:0px;
 }
