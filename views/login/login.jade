@@ -1,32 +1,42 @@
 extends ../layout
 
 block content
-	div.account-login.container(ng-controller="loginCtrl as vm")
-		div.col-sm-6.col-sm-offset-3.col-md-4.col-md-offset-4.col-lg-4.col-lg-offset-4
-			div.panel.panel-primary
-				div.panel.panel-material-blue-grey-900 Oops.. This area has limited access to internal staff only for testing purposes: WE ARE SEWING SOMETHING AWESOME.  Click here to go to 
-					a.subtle Toxic Mushroom
-				div.panel-heading.text-center
-					h4 LOGIN
-				div.panel-body
-					div.alert.alert-danger(ng-if="vm.message.length > 0", ng-bind-html="vm.message") {{vm.message}}
-					form(ng-submit="vm.login(vm.user)")
-						div.form-group.has-feedback.has-feedback
-							i.pull-right.form-control-feedback.glyphicon.glyphicon-envelope
-							input.form-control(id="email", type="email", name="email", placeholder="Email" ng-model="vm.user.email", mwr-autofill-field, required)
-						div.form-group.has-feedback.has-feedback
-							i.pull-right.form-control-feedback.glyphicon.glyphicon-lock
-							input.form-control(id="password", type="password", name="password", placeholder="Password", ng-model="vm.user.password", mwr-autofill-field, required)
-						div.form-group.text-right
-							a.subtle(href="#", ng-click="vm.forgotPassword(vm.user)", value="Forgot Password", title="Forgot Password")
-								span.small Forgot password?
-						div.form-group.text-center
-							button.btn.btn-material-pink(type="submit", value="Login", title="Login")
-								span Go
-						div.form-group.text-center
-							a.t(href="/signup", value="Sign Up", title="Sign Up")
-								span Sign Up Here
-				div.text-center
-					button.btn.btn-default.facebook(ng-click="vm.loginFB()")
-						Login Connect with 
-							span.fb-emphasis Facebook
+    .account-login.container(ng-controller='loginCtrl as vm')
+      .col-sm-6.col-sm-offset-3.col-md-4.col-md-offset-4.col-lg-4.col-lg-offset-4
+        .panel.panel-primary
+          .panel-heading.text-center
+            h4
+              | LOGIN
+          .panel-body
+            .alert.alert-danger(ng-if='vm.message.length > 0', ng-bind-html='vm.message') {{vm.message}}
+            form(ng-submit='vm.login(vm.user)')
+              .form-group.has-feedback.has-feedback
+                i.pull-right.form-control-feedback.glyphicon.glyphicon-envelope
+                input#email.form-control(type='email', name='email', placeholder='Email', ng-model='vm.user.email', mwr-autofill-field='mwr-autofill-field', required='required')
+              .form-group.has-feedback.has-feedback
+                i.pull-right.form-control-feedback.glyphicon.glyphicon-lock
+                input#password.form-control(type='password', name='password', placeholder='Password', ng-model='vm.user.password', mwr-autofill-field='mwr-autofill-field', required='required')
+              .form-group.text-right
+                a.subtle(href='#', ng-click='vm.forgotPassword(vm.user)', value='Forgot Password', title='Forgot Password')
+                  span.small Forgot password?
+              .form-group.text-center
+                button.btn.btn-material-pink(type='submit', value='Login', title='Login')
+                  span Go
+              .form-group.text-center
+                a.t(href='/signup', value='Sign Up', title='Sign Up')
+                  span Sign Up Here
+          .text-center
+            img(style='width:80px;height:80px', src='../images/toxic_mushroom.png')
+            button.btn.btn-default.facebook(ng-click='vm.loginFB()')
+              login
+                | Connect with 
+                span.fb-emphasis Facebook
+                
+    #footer
+      #copyright-bar
+        .container
+          .row.text-center
+            .copyright-content
+              .span4
+                h6 hackJam @ HKUST 2016.
+                h6 Toxic Mushroom 2016 All rights reserved.

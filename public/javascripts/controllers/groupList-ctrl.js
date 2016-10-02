@@ -23,6 +23,7 @@ angular.module('toxicApp')
         $http(params).then(function(response){
             console.log(response);
         }, function(e){
+            console.log('Error');
             console.log(e);
         });
     }  

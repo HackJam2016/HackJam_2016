@@ -22,8 +22,9 @@ angular.module('toxicApp')
     function forgotPassword(user) {
         try {
             if (user.email.trim().length === 0) {
-                    vm.message = "Please enter a valid email address";
+                vm.message = "Please enter a valid email address";
             } else {
+                
             }
         } catch(ex) {
             vm.message = "Please enter a valid email address";

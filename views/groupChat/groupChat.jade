@@ -8,7 +8,7 @@ block content
 			.col-md-10.col-md-offset-1
 				.row
 					.col-md-12.group-chat-panel
-						.panel.panel-primary(ng-controller="groupChatCtrl as vm")
+						.panel.panel-primary(ng-init="vm.getChat()", ng-controller="groupChatCtrl as vm")
 							.panel-heading(style="padding: 0 0 0 8px;")
 								span.glyphicon.glyphicon-user
 								h6.panel-title(style="display:inline;") Chat
@@ -33,8 +33,8 @@ block content
 														small {{chat.text}}
 											tr(ng-if="vm.chatMessages.length===0")
 												td
-													p Nothin' here.
-														strong Say sth!
+													p Nothing here.
+														strong  Say sth!
 							.panel-footer
 								form
 									.input-group.input-group-sm
