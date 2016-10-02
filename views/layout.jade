@@ -4,8 +4,10 @@ html
     base(href="/")
     title= title
     //- Latest compiled and minified CSS 
-    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.3/css/bootstrap.min.css', integrity='sha384-MIwDKRSSImVFAZCVLtU0LMDdON6KVCrZHyVQQj6e8wIEJkW4tvwqXrbMIya1vriY', crossorigin='anonymous')
     link(rel='stylesheet', href='https://cdn.firebase.com/libs/firechat/3.0.1/firechat.min.css')
+    link(rel='stylesheet', href='http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css')
+    link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.4.4/css/material-fullpalette.min.css')
+    link(rel='stylesheet', href='/stylesheets/style.css')
     //- mdi icon 
     //- link(href="css/materialdesignicons.min.css" media="all" rel="stylesheet" type="text/css")
     //- External library
@@ -17,6 +19,7 @@ html
     //- UI Bootstrap 
     script(src='https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.1.4/ui-bootstrap-tpls.min.js')
     script(src='https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.1.4/ui-bootstrap.min.js')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.4.4/js/material.min.js')
     //- ui-router
     script(src='https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.1/angular-ui-router.min.js')
     //- firebase
@@ -31,5 +34,5 @@ html
     script(src='/javascripts/controllers/groupList-ctrl.js')
     script(src='/javascripts/controllers/groupChat-ctrl.js')
     script(src='/javascripts/services/home.js')
-  body
+  body(ng-app="toxicApp")
     block content 

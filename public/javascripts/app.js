@@ -1,5 +1,5 @@
 angular.module('toxicApp', ['ngRoute', 'ngResource', 'ui.bootstrap'])
-  .config(function($routeProvider, $urlRouterProvider, $locationProvider){
+  .config(function($routeProvider, $locationProvider){
   	console.log("config");
   	$routeProvider
   		.when('/login', {
@@ -15,8 +15,6 @@ angular.module('toxicApp', ['ngRoute', 'ngResource', 'ui.bootstrap'])
   			templateUrl: '/groupChat'
   		});
 	$locationProvider.html5Mode(true);
-
-	$urlRouterProvider.otherwise('/login');
 
 	// $rootScope.$on('$stateChangeStart', function(event, toState, fromState, fromParams) {
 	// 	if (toState.access.requiredLogin) {
