@@ -1,5 +1,5 @@
 angular.module('toxicApp')
-  .controller('loginCtrl', ['$scope', '$location', '$window', function($scope, $location, $window) {
+  .controller('loginCtrl', ['$scope', '$location', '$window', '$http', function($scope, $location, $window, $http) {
   	var vm = this;
 
   	vm.user = {};
@@ -9,9 +9,11 @@ angular.module('toxicApp')
   	vm.loginFB = loginFB;
   	vm.forgotPassword = forgotPassword;
 
-  	function login(user) {	
-  		console.log("login!");
-  		$location.path('/home');
+  	function login(user) {
+      if (user.email == 'toxic@mushroom.com' && user.password == '123456') {
+        console.log('y89dwyhoi');
+        $window.location.href = '/groupList';
+      }
   	}
   	function loginFB(user) {
         $window.location.href = '/api/account/loginFB';
