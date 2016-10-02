@@ -2,13 +2,16 @@ doctype html
 html
   head
     title= title
-    // Latest compiled and minified CSS 
+    //- Latest compiled and minified CSS 
+    //- External library
     link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.3/css/bootstrap.min.css', integrity='sha384-MIwDKRSSImVFAZCVLtU0LMDdON6KVCrZHyVQQj6e8wIEJkW4tvwqXrbMIya1vriY', crossorigin='anonymous')
     script(src='https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js')
     script(src='https://code.angularjs.org/1.5.8/angular-route.min.js')
     script(src='https://code.angularjs.org/1.5.8/angular-resource.min.js')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.1/angular-ui-router.min.js')
+    //- Project Structure
     script(src='/javascripts/app.js')
-    script(src='/javascripts/controllers/movie-ctrl.js')
-    script(src='/javascripts/services/movie.js')
+    script(src='/javascripts/controllers/home-ctrl.js')
+    script(src='/javascripts/services/home.js')
   body
     block content 

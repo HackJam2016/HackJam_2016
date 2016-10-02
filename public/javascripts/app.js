@@ -1,10 +1,10 @@
-angular.module('m8viesApp', ['ngRoute', 'ngResource'])
+angular.module('toxicApp', ['ngRoute', 'ngResource', 'ui.router'])
   .config(function($routeProvider){
   	$routeProvider
-      .when('/movies', {
-  		  templateUrl: '/movies'
+      .when('/home', {
+  		  templateUrl: '/home'
   	   })
        .otherwise({
-         templateUrl: '/movies'
+         templateUrl: '/home'
        });
   });
