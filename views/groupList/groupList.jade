@@ -1,5 +1,32 @@
 extends ../layout
 
 block content
-	div
-		div group list here
+	div(ng-controller="groupListCtrl as vm")
+		.group-list-heading-panel
+			h1.group-list-heading Here is the existing groups
+			.add-group(ng-click="vm.addGroup()")
+				i.pull-right.zmdi.zmdi-accounts-add
+		.list-group.group-list
+			.list-group-item(ng-repeat="group in vm.groups", ng-click="vm.viewGroup()")
+				.row-action-primary
+					img(src="../images/toxic_mushroom.png")
+				.row-content
+					.text-panel
+						h4.list-group-item-heading {{group.title}}
+						p.list-group-item-text {{group.description}}
+					.display-panel
+						span Time left: {{group.timeLeft}} |&nbsp;
+						span Population: {{group.population}}
+			.list-group-separator
+		.modal(ng-show="vm.showModal")
+			.modal-header
+				h3#modal-title.modal-title Create New Group
+			#modal-body.modal-body
+				.form-group.label-floating
+					label.control-label(for="groupTitle") Group Title
+					input#groupTitle.form-control(type="text", placeholder="Enter group title...", ng-model="vm.group.title")
+				.form-group.label-floating
+					label.control-label(for="groupDescription") Group Description
+					input#groupDescription.form-control(type="text", placeholder="Enter group description...", ng-model="vm.group.description")
+			.modal-footer
+				button.btn.btn-warning(type="button", ng-click="vm.createGroup()") Create
