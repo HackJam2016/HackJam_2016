@@ -11,7 +11,7 @@ angular.module('toxicApp')
   	vm.viewGroup = viewGroup;
 
   	function addGroup() {
-  		vm.showModal = true;
+  		vm.showModal = !vm.showModal;
   	}
 
   	function createGroup() {
@@ -26,3 +26,4 @@ angular.module('toxicApp')
   	}
 
   }])
+

@@ -1,5 +1,6 @@
 body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  margin-bottom:50px;
 }
 
 a {
@@ -107,14 +108,18 @@ a {
 .modal>.modal-body>.form-group>.form-control {
 	margin-bottom: 30px !important;
 }
-.modal + .ng-hide-remove {
+.modal .ng-hide-remove {
 	-webkit-animation: 0.5s show;
 	animation: 0.5s show;
 }
 
 /* Group Chat */
+.group-chat-panel>.panel>.panel-heading>.panel-title {
+	font-size: 30px;
+	display: inline;
+}
 .chat-username {
-	width: 10%;
+	width: 15%;
 	display: inline-block;
 }
 .chat-username>i {
@@ -122,11 +127,11 @@ a {
 	font-size: 20px;
 }
 .chat-username>span {
-	font-size: 16px;
+	font-size: 14px;
 	font-weight: 500;
 }
 .chat-message {
-	width: 90%;
+	width: 85%;
 }
 .input-icon {
 	font-size: 30px !important;
@@ -190,4 +195,13 @@ a {
     opacity:1;
     transform: scale(1);
   }
+#footer{
+    position:fixed;
+    height:60px;
+    background-color:coral;
+    color: white;
+    bottom:0px;
+    left:0px;
+    right:0px;
+    margin-bottom:0px;
 }
